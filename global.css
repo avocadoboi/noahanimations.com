@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'MSSerif';
+    src: url('MS_Serif.ttf');
+}
+body {
+    background-color: rgb(254, 214, 100); 
+    font-family: 'MSSerif', serif, 'Times New Roman', Times;
+}
+a {
+    cursor: pointer;
+    text-decoration:none;
+    color:rgb(0, 106, 167);
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Noah A. Hall</title>
+
+    <link rel="shortcut icon" href="../icon.png">
+    <link rel="stylesheet" href="../global.css">
+</head>
+
+<body>
+    <!-- Title -->
+    <div style="position:absolute; color:rgb(0, 106, 167); left: 50%; top: 45%; transform:translateX(-50%) translateY(-50%); text-align:center; white-space:nowrap;">
+        <div style="position:relative; transform: translateX(40px);">
+            <div style="display:inline-block; vertical-align:top;">
+                <p style="display:inline-block; font-size: 65px; margin-bottom:0px;">Noah A. H.'s</p>
+                <br>
+                <p style="display:inline-block; font-size:35px; margin-top:-30px; letter-spacing:8px;">official website</p>
+            </div>
+            <div id="lennard" style='display:inline-block; margin-top:-100px; width:340px; cursor:pointer; background-image:url("lennard.png");'></div>
+            <audio id="danceMusic" preload="auto" src="dance music.wav"></audio>
+        </div>
+        <br>
+        <div style="display:inline-block; font-size:30px; margin-top: 20px; line-height:28px; font-weight:600; white-space:nowrap;">
+            <div style="display:inline-block; margin-right:40px; text-align:left; vertical-align:top;">
+                <a style="color:white" href="../under-construction/index.html">Doodles</a>
+                <br>
+                <a style="color:white" href="../under-construction/index.html">Paintings</a>
+                <br>
+                <a style="color:white" href="../under-construction/index.html">Music</a>
+            </div>
+            <div style="display:inline-block; margin-right:40px; text-align:left; vertical-align:top;">
+                <a style="color:red" href="../under-construction/index.html">Cartoons</a>
+                <br>
+                <a style="color:red" href="../under-construction/index.html">Storyboards</a>
+                <br>
+                <a style="color:red" href="../under-construction/index.html">Drawings</a>
+                <br>
+                <a style="color:red" href="../under-construction/index.html">Scrap'd stuff</a>
+            </div>
+            <div style="display:inline-block; margin-right:0px; text-align:left; vertical-align:top;">
+                <a style="color:black" href="../about/index.html" >About</a>
+                <br>
+                <a style="color:black" href="../under-construction/index.html">Contact</a>
+                <br>
+                <a style="color:black" href="../links/index.html">Links</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let lennardFrames = [
+            [ 0, 0, 300, 300 ],
+            [ 300, 0, 300, 300 ],
+            [ 600, 0, 300, 300 ],
+            [ 900, 0, 300, 300 ],
+            [ 1200, 0, 300, 300 ],
+            [ 1500, 0, 300, 300 ],
+            [ 1800, 0, 300, 300 ],
+            [ 2100, 0, 300, 300 ],
+            [ 2400, 0, 300, 300 ],
+            [ 2700, 0, 300, 300 ],
+            [ 3000, 0, 300, 300 ],
+            [ 3300, 0, 300, 300 ],
+            [ 3600, 0, 300, 300 ],
+            [ 3900, 0, 300, 300 ],
+            [ 4200, 0, 300, 300 ]
+        ];
+        
+        let lennard = document.getElementById("lennard");
+        let currentLennardIndex = 1;
+
+        function setLennardFrame(p_index) {
+            currentLennardIndex = p_index;
+            lennard.style.backgroundPosition = '-' + lennardFrames[p_index][0].toString() + "px " + '-' + lennardFrames[p_index][1].toString() + "px";
+            lennard.style.width = lennardFrames[p_index][2].toString() + "px";
+            lennard.style.height = lennardFrames[p_index][3].toString() + "px";
+        }
+        setLennardFrame(1);
+
+        let isLennardJumping = false;
+        let danceMusic = document.getElementById("danceMusic");
+        let timeoutHandle;
+
+        function openEyes(p_duration) {
+            if (!isLennardJumping) {
+                currentLennardIndex = 1;
+                setLennardFrame(currentLennardIndex);
+
+                clearTimeout(timeoutHandle);
+                timeoutHandle = setTimeout(closeEyes, p_duration);
+            }
+        } openEyes();
+
+        function closeEyes() {
+            if (!isLennardJumping) {
+                currentLennardIndex = 0;
+                setLennardFrame(currentLennardIndex);
+
+                clearTimeout(timeoutHandle);
+                timeoutHandle = setTimeout(() => { Math.random() < 0.2 ? openEyes(130) : openEyes(1500) }, 100);
+            }
+        }
+
+        function updateJumpingAnimation() {
+            if (isLennardJumping) {
+                currentLennardIndex++;
+                if (currentLennardIndex == lennardFrames.length) {
+                    currentLennardIndex = 2;
+                }
+                setLennardFrame(currentLennardIndex);
+
+                setTimeout(updateJumpingAnimation, 89);
+            }
+        }
+
+        lennard.addEventListener("click", () => {
+            if (!isLennardJumping) {
+                currentLennardIndex = 2;
+                isLennardJumping = true;
+                updateJumpingAnimation();
+
+                danceMusic.play();
+
+                clearTimeout(timeoutHandle);
+                timeoutHandle = setTimeout(() => {
+                    isLennardJumping = false;
+                    openEyes();
+                }, danceMusic.duration*1000);
+            }
+        });
+        
+    </script>
+</body>
+
+</html>
