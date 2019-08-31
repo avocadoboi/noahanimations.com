@@ -26,12 +26,8 @@
 <body>
     <div style="position:absolute; left:50%; top:50%; color:#000; transform:translateX(-50%) translateY(-53%); text-align:center; white-space:nowrap;">
         <p style="font-size:50px; color:#000; margin-top:0px; margin-bottom:40px; text-shadow:3px 3px 1px rgba(0, 0, 0, 0.2); font-weight:600;">Image archive</p>
-        <div style="display:inline-block; background-color:rgb(84, 74, 191); border-style: solid; 
-                    border-color:rgb(182, 177, 227) rgb(32, 26, 100) rgb(32, 26, 100) rgb(182, 177, 227);
-                    border-width:5px; box-shadow:3px 3px 2px rgba(0, 0, 0, 0.5); position:relative;
-                    padding:8px; margin-right:5px;">
-            <div style="background-color:#fff; color:#000; width:300px; height:320px; padding:13px 13px; text-align:left; border-style:solid;
-                        border-width:4px; border-color:rgb(32, 26, 100) rgb(182, 177, 227) rgb(182, 177, 227) rgb(32, 26, 100);">
+        <div style="margin-right:5px;" class="content-frame">
+            <div style="width:300px; height:320px; text-align:left; padding:13px;" class="content-container">
                 <p id="text_directoryName" style="margin-top:0px; margin-bottom:7px;"></p>
                 <div style="margin-left:0px; margin-right:0px; margin-bottom:5px; background-color:#000; height:2px;"></div>
                 <div id="div_directoryList" style="margin-left:0px; margin-right:0px; height:250px; overflow:auto;"></div>
@@ -39,12 +35,8 @@
                 <p id="link_back" class="button" style="cursor:pointer; margin-bottom:0px; margin-top:10px; color:#000;"></p>
             </div>
         </div>
-        <div style="display:inline-block; background-color:rgb(84, 74, 191); border-style: solid; 
-                    border-color:rgb(182, 177, 227) rgb(32, 26, 100) rgb(32, 26, 100) rgb(182, 177, 227);
-                    border-width:5px; box-shadow:3px 3px 2px rgba(0, 0, 0, 0.5); position:relative;
-                    padding:8px; vertical-align:bottom;">
-            <div style="background-color:#fff; color:#000; width:400px; height:320px; padding:13px 13px; text-align:left; border-style:solid;
-                        border-width:4px; border-color:rgb(32, 26, 100) rgb(182, 177, 227) rgb(182, 177, 227) rgb(32, 26, 100);">
+        <div style="vertical-align:bottom;" class="content-frame">
+            <div style="width:400px; height:320px; text-align:left; padding:13px;" class="content-container">
                 <p id="text_file" style="margin-top:0px; margin-bottom:5px;">File:</p>
                 <p id="text_fileDate" style="margin-top:0px; margin-bottom: 5px; font-size: 10px;"></p>
                 <div id="div_image" style="display:block; margin-left:auto; margin-right:auto; margin-top:15px; width:380px; height:240px; background-repeat:no-repeat; 

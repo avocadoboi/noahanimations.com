@@ -42,14 +42,10 @@
     <img src="sparkle2.gif" style="position:absolute; left:50%; top:327px; transform:translateX(270px);">
     <p style="font-family:'title font'; font-size:112px; margin-top:14px; margin-bottom:0px; text-shadow:6px 6px 0.8px rgba(0, 0, 0, 0.3);">Noah Animations</p>
     <p style="color:rgb(255, 20, 0); font-size:18px; font-weight: bold; margin-top:-4px; text-shadow:2px 2px 0px rgba(0, 0, 0, 0.2);">Cartoons, funny drawings and some music</p>
-    <div style="display:inline-block; background-color:rgb(84, 74, 191); border-style: solid; 
-                border-color:rgb(182, 177, 227) rgb(32, 26, 100) rgb(32, 26, 100) rgb(182, 177, 227);
-                border-width:5px; box-shadow:3px 3px 2px rgba(0, 0, 0, 0.5); margin-top:5px; position:relative;
-                padding:8px;">
-        <div style="display:inline-block; width:540px; background-color:white; border-style:solid; padding-top:10px;
-                    border-width:4px; border-color:rgb(32, 26, 100) rgb(182, 177, 227) rgb(182, 177, 227) rgb(32, 26, 100);">
+    
+    <div style="margin-top:5px;" class="content-frame">
+        <div style="width:540px; padding-top:10px;" class="content-container">
             <a class="linkButton" href="https://www.youtube.com/user/noahanimerar"><img src="cartoons.png" style="margin-right: 8px; vertical-align:middle; transform:translateY(-2px);">Cartoons</a>
-            <!-- <a class="linkButton" href="../under-construction/index.html"><img src="music.png"  style="margin-right: 8px; vertical-align:middle; transform:translateY(-2px);">Contact</a> -->
             <a class="linkButton" href="../archive/index.html"><img src="archive.png"  style="margin-right: 10px; vertical-align:middle; transform:translateY(-2px);">Archive</a>
             <a class="linkButton" href="../contact/index.html"><img src="contact.png"  style="margin-right: 8px; vertical-align:middle; transform:translateY(-2px);">Contact</a>
             <br>
@@ -57,15 +53,8 @@
                 <p style="font-size: 20px; font-weight:bold; text-align:left; margin-left:5px; margin-top:5px;">Latest cartoon</p>
                 <iframe width="450" height="253" src="https://www.youtube.com/embed/videoseries?list=UUx_D3fBXZ0ndvE1KhSO7KKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <!-- <div style="display:inline-block; margin-top:11px; margin-bottom:8px; width:512px; border:2px solid black; box-shadow:3px 3px 0.8px rgba(0, 0, 0, 0.7); position:relative;">
-                <p style="margin-top:12px; margin-left: 16px; margin-bottom:0px; font-size:20px; font-weight:bold; text-align:left; white-space:pre;" id="newsTitle">News  -  </p>
-                <a style="display:inline-block; font-size:16px; position:absolute; right:20px; top:12px; color:black; font-weight:bold; text-decoration:underline;" href="../news-archive/index.html">News archive...</a>
-                <div style="display:inline-block; width:488px; height:2px; background-color:black;"></div>
-                <p style="margin:12px 16px; font-size:16px; font-weight:500; color:black; text-align:left; white-space:pre-line;" id="newsContent"></p>
-            </div> -->
             <br>
             <a href="https://www.instagram.com/gotaren_/" style="display:inline-block; margin:20px 8px;"><img src="instagram.png" style="height:45px; margin-top: 5px;"></a>
-            <!-- <a href="https://www.youtube.com/user/noahanimerar" style="display:inline-block; margin:20px 8px;"><img src="youtube.png" style="height:40px;"></a> -->
             <a href="https://twitter.com/NoahAnimations" style="display:inline-block; margin:20px 8px;"><img src="twitter.png" style="height:40px;"></a>
             <a href="https://soundcloud.com/noah-adolfsson-hall" style="display:inline-block; margin:20px 8px;"><img src="soundcloud.png" style="height:40px;"></a>
             <svg width="100" height="40" style="display:inline-block; margin-left:8px; transform:scale(0.8);">
@@ -75,69 +64,6 @@
         </div>
     </div>
     <p style="color:white; font-size: 15px; font-weight:bold; margin-top:16px;">© Noah Adolfsson Hall 2019</p>
-
-    <script>
-        let newsRequest = new XMLHttpRequest();
-        newsRequest.open("GET", "../news-archive/news.json");
-        newsRequest.send();
-        newsRequest.onreadystatechange = () => {
-            if (newsRequest.status == 200 && newsRequest.readyState == XMLHttpRequest.DONE) {
-                newsData = JSON.parse(newsRequest.responseText);
-                if (newsData.length > 0) {
-                    document.getElementById("newsTitle").innerHTML += newsData[0]["Date"];
-                    let contentElement = document.getElementById("newsContent");
-                    let contentHTML = newsData[0]["Content"];
-                    if (contentHTML.length > 600) {
-                        contentHTML = contentHTML.substr(0, 600) + "... <a href='../news-archive/index.html' style='color:#000; text-decoration:underline;'>(read more)</a>";
-                    }
-                    for (let a = 0; a < contentHTML.length - 3; a++) {
-                        if (contentHTML[a] == '[' && contentHTML[a+1] == '[') {
-                            let imageAttributesLength = 2;
-                            while (contentHTML[a+imageAttributesLength] != ']' || contentHTML[a+imageAttributesLength + 1] != ']'){
-                                imageAttributesLength++;
-                            }
-                            
-                            let attributes = JSON.parse(contentHTML.substr(a, imageAttributesLength + 2))[0];
-                            console.log(attributes);
-
-                            if (attributes.length > 0) {
-                                let imageHTML = "<img src=\"../news-archive/images/" + attributes[0] + "\" style=\"vertical-align:middle;";
-                                if (attributes.length > 1 && attributes[1]) {
-                                    imageHTML += "width:" + Number.parseInt(attributes[1]) + "px;";
-                                }
-                                if (attributes.length > 2 && attributes[2]) {
-                                    imageHTML += "height:" + Number.parseInt(attributes[2]) + "px;";
-                                }
-
-                                if (attributes.length > 3 && attributes[3]) {
-                                    imageHTML += "margin-left:" + Number.parseInt(attributes[3]) + "px;";
-                                }
-                                else {
-                                    imageHTML += "margin-left: 5px;";
-                                }
-                                if (attributes.length > 4 && attributes[4]) {
-                                    imageHTML += "margin-top:" + Number.parseInt(attributes[4]) + "px;";
-                                }
-                                if (attributes.length > 5 && attributes[5]) {
-                                    imageHTML += "margin-right:" + Number.parseInt(attributes[5]) + "px;";
-                                }
-                                else {
-                                    imageHTML += "margin-right: 8px;";
-                                }
-                                if (attributes.length > 6 && attributes[6]) {
-                                    imageHTML += "margin-bottom:" + Number.parseInt(attributes[6]) + "px;";
-                                }
-                                imageHTML += "\"/>";
-                                contentHTML = contentHTML.substr(0, a) + imageHTML + contentHTML.substr(a + imageAttributesLength + 2);
-                            }
-                            a += imageAttributesLength + 1;
-                        }
-                    }
-                    contentElement.innerHTML = contentHTML;
-                }
-            }
-        };
-    </script>
 </body>
 
 </html>
