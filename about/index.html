@@ -1,91 +1,64 @@
-﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Noah A. H. | About</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=0.7">
     <meta charset="UTF-8">
-
-    <link rel="shortcut icon" href="../icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="../global.css">
-
-    <style>
-        #div_wrapper {
-            left: 50%;
-            top: 50%;
-            transform: translateX(-50%) translateY(-50%);
-        }
-
-        #div_aboutText {
-            margin-left: 60px;
-        }
-
-        #br_mobileBreak {
-            display: none;
-        }
-
-        #img_dog {
-            width: initial;
-        }
-
-        @media screen and (max-width: 1100px) {
-            #div_wrapper {
-                left: 50%;
-                top: 0px;
-                transform: translateX(-50%);
-            }
-
-            #div_aboutText {
-                margin-left: 0px;
-            }
-
-            #br_mobileBreak {
-                display: block;
-            }
-
-            #img_dog {
-                width: 450px;
-            }
-        }
-    </style>
+    <title>Noah A. H.</title>
 </head>
 
 <body>
-    <div id="div_wrapper" style="position:absolute; color:black; text-align:center; white-space:nowrap; margin-top:0px;">
-        <div style="position:relative; top:40px; display:inline-block; margin-top:0px;">
-            <img id="img_dog" style="display:inline-block; width:330px; border:8px solid black;" src="portrait.jpg">
-            <p style="text-align:center; margin-top:2px; font-size:15px; font-weight: 900;">Noah A. H.<br>Creator of Noah Animations</p>
+    <div id="wrapper">
+        <a href="../home/index.html"><img id="title_image" src="../title.gif"/></a>
+        <div id="content">
+            <div id="content_left">
+                <p id="content_title">About Noah Adolfsson Hall</p>
+                <p id="content_text">
+                    I am <span id="noah_age_prefix">an</span> <span id="noah_age">(calculating age...)</span> year old cartoonist, animator and composer from Sweden.
+                    <br><br>
+                    I have made animations for the internet since 2012 in my spare time,
+                    which I am still doing to this day. I mostly work independently but
+                    I also collaborate with internet friends to make animations.
+                    <br><br>
+                    My dream is to have my own animation studio someday where I can 
+                    make animated films together with my friends and other like-minded
+                    people.
+                </p>
+            </div>
+            <div id="content_right">
+                <img id="selfie" src="sjalvportratt.png">
+                <div id="social_links">
+                    <a href="https://instagram.com/gotaren_/">instagram</a>
+                    <a href="https://twitter.com/gotaren">twitter</a>
+                    <a href="https://youtube.com/user/noahanimerar">youtube</a>
+                    <a href="https://vimeo.com/user29788703">vimeo</a>
+                </div>
+            </div>
         </div>
-        <br id="br_mobileBreak">
-        <div id="div_aboutText" style="display:inline-block; width: 540px; white-space:normal; text-align:left;">
-            <p style="font-size:55px; margin-bottom:0px;">About</p>
-            <p style="font-size:20px; line-height:24px; margin-top:10px;">
-                Welcome to my official webpage, and to the about page. Noahanimations.com was mainly created so I
-                (Noah) could have my own website, a place where I could put out whatever I wanted, by my own rules.
-                Youtube and twitter has always and will always be the main platforms where I show content, but I will
-                put out other stuff that would be more difficult to show off on youtube and twitter, like the archive
-                that already has a lot of images in it. Having all my creations at one place is simpler, and could also
-                work as a portfolio.
-                <br><br>
-                If you like the stuff that I make, please enjoy this website, and look back at it every once in a
-                while. The website is far from completed. If you dislike my stuff and is checking this website anyway,
-                you're welcome too..
-            </p>
-        </div>
-
-        <div style="font-size:27px; margin-top: 45px; margin-bottom:40px;">
-            <a href="https://www.youtube.com/user/noahanimerar" style="display:inline-block;"><img src="youtube.png"
-                    style="height:40px;"></a>
-            <a href="https://twitter.com/NoahAnimations" style="display:inline-block; margin-left:20px; margin-right:10px;"><img
-                    src="twitter.png" style="height:40px;"></a>
-            <a href="https://soundcloud.com/noah-adolfsson-hall" style="display:inline-block;"><img src="soundcloud.png"
-                    style="height:40px;"></a>
-            <p style="margin-top: 13px;">Go back to
-                <a style="margin-left:9px;" href="../home/index.html">MENU</a>
-            </p>
+        <div id="menu_links">
+            <a class="menu_link" href="../home/index.html">home</a>
+            <a class="menu_link">cartoons</a>
+            <a class="menu_link">music</a>
+            <a class="menu_link">contact</a>
         </div>
     </div>
+
+    <script>
+        const birth_year = 2002;
+        const birth_month = 2; // March
+        const birth_day = 28;
+
+        let noah_age = document.getElementById("noah_age");
+        let current_date = new Date();
+        let no_birthday_yet = current_date.getMonth() < birth_month || current_date.getDate() < birth_day && current_date.getMonth() == birth_month;
+        let age_number = current_date.getFullYear() - birth_year - no_birthday_yet;
+        noah_age.innerHTML = (age_number).toString();
+
+        if (age_number > 18) {
+            document.getElementById("noah_age_prefix").innerHTML = "a";
+        }
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,38 @@
+
+#title_image {
+    width: 500px;
+}
+#characters_image {
+    width: 700px;
+    padding-left: 30px;
+}
+
+#menu_buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 992px) {
+    #title_image {
+        width: 400px;
+    }
+    #characters_image {
+        width: 600px;
+    }
+}
+@media screen and (max-width: 600px) {
+    #title_image {
+        width: 300px;
+    }
+    #characters_image {
+        width: 400px;
+    }
+}
+@media screen and (max-width: 450px) {
+    #title_image {
+        width: 300px;
+    }
+    #characters_image {
+        width: 300px;
+    }
+}
