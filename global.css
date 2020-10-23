@@ -10,12 +10,12 @@ body {
 }
 
 @font-face {
-    font-family: 'MSSerif';
-    src: url('MS_Serif.ttf');
+    font-family: 'Trattatello';
+    src: url('Trattatello.ttf');
 }
 
 p, a {
-    font-family: 'MSSerif', serif, 'Times New Roman', Times;
+    font-family: 'Trattatello', serif, 'Times New Roman', Times;
     color: white;
 }
 
