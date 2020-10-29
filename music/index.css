@@ -47,3 +47,18 @@ a {
 #menu_links > a {
     color: white;
 }
+#menu_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 630px) {
+    #menu_links {
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: nowrap;
+        text-align: center;
+    }
+}
