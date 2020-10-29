@@ -12,6 +12,13 @@
     flex-direction: row;
 }
 
+#menu_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
 @media screen and (max-width: 992px) {
     #title_image {
         width: 400px;
@@ -20,12 +27,21 @@
         width: 600px;
     }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 630px) {
     #title_image {
         width: 300px;
     }
     #characters_image {
         width: 400px;
+    }
+    #menu_links {
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    #menu_links > a {
+        width: 50%;
     }
 }
 @media screen and (max-width: 450px) {

@@ -24,12 +24,7 @@ a {
     cursor: pointer;
 }
 
-#menu_links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.menu_link {
+#menu_links > a {
     font-size: 2.7em;
     padding: 25px 20px 0 20px;
 }
@@ -53,20 +48,17 @@ a {
     #wrapper {
         margin: 10px 30px;
     }
-    #menu_links {
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-    }
-    .menu_link {
-        margin: 0 10px;
+    #menu_links > a {
+        font-size: 2.2em;
     }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 630px) {
     #title_image {
         width: 300px;
     }
-    .menu_link {
-        font-size: 2.4em;
+    #menu_links > a {
+        font-size: 2em;
+        padding: 25px 0 0 0;
     }
 }
 @media screen and (max-width: 350px) {
