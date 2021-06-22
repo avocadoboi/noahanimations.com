@@ -93,6 +93,7 @@
         height: 200px;
     }
     #menu_links {
+        display: flex;
         flex-direction: column;
         justify-content: center;
         flex-wrap: nowrap;
