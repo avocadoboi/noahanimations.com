@@ -1,0 +1,28 @@
+@font-face {
+	font-family: Trattatello;
+	src: url('assets/Trattatello.ttf');
+}
+
+body {
+	background-color: black;
+	margin: 0 auto;
+	padding: 0 20px;
+	// max-width: 900px;
+	max-width: 1200px;
+	color: white;
+	font-family: Trattatello;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+a:hover {
+	// color: #ddd;
+	opacity: 0.85;
+}
+
+a, p {
+	font-size: 1.4em;
+	line-height: 1.6em;
+}

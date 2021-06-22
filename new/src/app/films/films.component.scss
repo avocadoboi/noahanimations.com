@@ -1,0 +1,42 @@
+#container {
+	display: flex;
+	flex-direction: row;
+}
+#title {
+	font-weight: 200;
+	font-size: 3em;
+	line-height: 1em;
+	margin-top: 30px;
+	margin-bottom: 0;
+	letter-spacing: -2px;
+}
+#left {
+	display: flex;
+	flex-direction: column;
+	margin-right: 30px;
+	width: 300px;
+	text-align: center;
+}
+#left > img {
+	width: 300px;
+	border: 5px white solid;
+}
+#images {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+#images > img {
+	width: 32%;
+	margin-bottom: 20px;
+}
+#buy {
+	color: rgb(255, 0, 0);
+	font-size: 2.2em;
+	line-height: 2.2em;
+	margin-bottom: 20px;
+}
+// #poster-image {
+// 	height: 400px;
+// }

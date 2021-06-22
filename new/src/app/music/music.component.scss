@@ -1,0 +1,23 @@
+a {
+	color: rgb(255, 20, 200);
+	margin-right: 10px;
+	font-size: 1.6em;
+	line-height: 1.6em;
+}
+
+#container {
+	display: flex;
+	flex-direction: row;
+}
+#images {
+	position: relative;
+}
+#pianospelaren {
+	height: 370px;
+}
+#cd {
+	position: absolute;
+	height: 130px;
+	top: 260px;
+	left: -50px;
+}

@@ -1,0 +1,78 @@
+
+#title {
+	font-weight: 200;
+	font-size: 2.4em;
+	line-height: 1.3em;
+	margin-top: 0;
+	margin-bottom: 0;
+	letter-spacing: -2px;
+}
+#price {
+	color: red;
+	font-size: 3em;
+	margin: 0;
+}
+
+label {
+	font-size: 1.5em;
+	margin-right: 20px;
+}
+select, input, button {
+	font-size: 1.5em;
+	background-color: black;
+	color: white;
+	font-family: Trattatello;
+	padding: 5px 20px;
+	border: 2px white solid;
+	margin-bottom: 10px;
+}
+input {
+	width: 50px;
+	padding: 5px 10px;
+}
+button {
+	border: 3px white solid;
+	font-size: 2em;
+	cursor: pointer;
+}
+button:hover {
+	opacity: 0.8;
+}
+
+#container {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	font-weight: 200;
+	letter-spacing: 1px;
+}
+
+#poster-image {
+	width: 300px;
+	border: 5px white solid;
+	margin-right: 20px;
+}
+
+#watch {
+	display: block;
+	text-align: center;
+	font-size: 2em;
+	margin-bottom: 20px;
+}
+
+#images {
+	position: relative;
+}
+#lantern-image {
+	width: 220px;
+	z-index: 2;
+	position: absolute;
+	right: 20px;
+	top: 70px;
+}
+#stellah-image {
+	z-index: 1;
+	width: 230px;
+	position: absolute;
+	right: 180px;
+}

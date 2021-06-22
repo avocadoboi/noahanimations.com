@@ -1,0 +1,12 @@
+<div id='navbar-container'>
+	<div id='horizontal'>
+		<a routerLink='/art'>art</a>
+		<a routerLink='/music'>music</a>
+		<a routerLink='/about'>about</a>
+		<a routerLink='/contact'>contact</a>
+	</div>
+	<!-- <a routerLink='films'>the lantern carrier</a> -->
+	<a routerLink='/films' *ngIf='hasLanternCarrier'>
+		<img id='the-lantern-carrier' src='assets/the_lantern_carrier.jpg'>
+	</a>
+</div>
