@@ -21,8 +21,8 @@ import { ArtComponent } from './art/art.component';
 		AboutComponent,
 		ContactComponent,
 		PostersComponent,
-  FilmsComponent,
-  ArtComponent
+		FilmsComponent,
+		ArtComponent
 	],
 	imports: [
 		BrowserModule,
